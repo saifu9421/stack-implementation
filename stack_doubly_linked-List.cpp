@@ -23,13 +23,6 @@ using namespace std;
                      tail = newNode;
                      return;
                   };
-                    Node *tmp =  head;
-                     while (tmp->next !=  NULL)
-                     {
-                          tmp =  tmp->next;
-                     };
-                    //   tmp->next = newNode;
-                    //    newNode->prev = tmp;
                      tail->next = newNode;
                      newNode->prev = tail;
                        tail = newNode;
@@ -43,18 +36,10 @@ using namespace std;
                            delete deleteNode;
                            return;
                     }; 
-                    Node *tmp = head;
-                     while (tmp->next->next != NULL)
-                     {
-                          tmp = tmp->next;
-                     };
-                     Node *deleteNode = tmp->next->next;
-                     tmp->next = tmp->next->next;
-                     delete deleteNode;
-                        // Node *deleteNode =  tail;
-                        // tail = tail->prev;
-                        // delete deleteNode;
-                        // tail->next = NULL;
+                        Node *deleteNode =  tail;
+                        tail = tail->prev;
+                        delete deleteNode;
+                        tail->next = NULL;
                };
                 
                 int size(){
@@ -69,16 +54,7 @@ using namespace std;
                 };
                  
                  int top(){
-                      Node  *tmp =  head;
-                       if(tmp->next == NULL){
-                         return tmp->val;
-                       };
-                        while (tmp->next != NULL)
-                        {
-                             tmp = tmp->next;
-                        };
-                         return tmp->val;
-                    //  return tail->val;
+                     return tail->val;
                  };
                   
                   bool empty(){
