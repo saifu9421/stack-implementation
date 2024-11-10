@@ -13,8 +13,8 @@ using namespace std;
     };
      class MyStack{
            public:
-            Node *head = NULL;
-             Node *tail = NULL;
+                     Node *head = NULL;
+                     Node *tail = NULL;
               
               void push(int val){
                  Node *newNode  = new Node(val);
